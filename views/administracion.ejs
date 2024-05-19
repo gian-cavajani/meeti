@@ -1,0 +1,80 @@
+<main class="contenedor panel-administracion">
+    <h1><%= nombrePagina %></h1>
+    <div class="contenedor-botones">
+        <a href="/nuevo-grupo" class="btn btn-amarillo">Nuevo Grupo</a>
+        <a href="/nuevo-meeti" class="btn btn-amarillo">Nuevo Meeti</a>
+        <a href="/editar-perfil" class="btn btn-rosa">Editar Perfil</a>
+        <a href="/imagen-perfil" class="btn btn-rosa">Imagen Perfil</a>
+    </div>
+    <div class="seccion-admin">
+        <h2>Tus Eventos</h2>
+        <ul>
+            <li>
+                <div class="informacion-admin">
+                    <p class="fecha">15 Mayo, 2024</p>
+                    <h3>E-Commetce en Uru</h3>
+                    <small>23 Asistentes</small>
+                </div>
+                <div class="acciones contenedor-botones">
+                    <a href="#" class="btn btn-verde">Editar</a>
+                    <a href="#" class="btn btn-azul2">Asistentes</a>
+                    <a href="#" class="btn btn-rojo">Eliminar</a>
+                </div>
+            </li>
+        
+            <li>
+                <div class="informacion-admin">
+                    <p class="fecha">24 Junio, 2024</p>
+                    <h3>BTC Crypto</h3>
+                    <small>22 Asistentes</small>
+                </div>
+                <div class="acciones contenedor-botones">
+                    <a href="#" class="btn btn-verde">Editar</a>
+                    <a href="#" class="btn btn-azul2">Asistentes</a>
+                    <a href="#" class="btn btn-rojo">Eliminar</a>
+                </div>
+            </li>
+        
+            <li>
+                <div class="informacion-admin">
+                    <p class="fecha">24 Junio, 2024</p>
+                    <h3>Node en MVD</h3>
+                    <small>200 Asistentes</small>
+                </div>
+                <div class="acciones contenedor-botones">
+                    <a href="#" class="btn btn-verde">Editar</a>
+                    <a href="#" class="btn btn-azul2">Asistentes</a>
+                    <a href="#" class="btn btn-rojo">Eliminar</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+
+    <div class="seccion-admin">
+        <h2>Tus Grupos</h2>
+        <% if(grupos.length >0){ %>
+        <ul>
+            <% grupos.forEach(grupo => { %>
+                <li>
+                    <div class="informacion-admin">
+                    <h3><%=grupo.nombre%></h3>
+                    </div>
+                    <div class="acciones contenedor-botones">
+                        <a href="/editar-grupo/<%=grupo.id%>" class="btn btn-verde">Editar</a>
+                        <a href="/imagen-grupo/<%=grupo.id%>" class="btn btn-azul2">Imagen</a>
+                        <a href="/eliminar-grupo/<%=grupo.id%>" class="btn btn-rojo">Eliminar</a>
+                    </div>
+                </li>
+                                                
+                <%  }) %>
+                    </ul>
+                    <%  }else{ %>
+                        <p>No tienes grupos creados</p>
+                    <%  } %>
+                </div>
+                
+                
+                
+            </main>
+            

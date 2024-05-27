@@ -8,16 +8,21 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
-const passport = require('./config/passport')
+const passport = require('./config/passport');
 
 //modelos
 require('./models/usuarios');
 require('./models/Categorias');
 require('./models/Grupos');
+require('./models/Meeti');
 
 //conexion a db
 db.sync()
-  .then(() => console.log('DB conectada ' + new Date().getHours()+":"+ new Date().getMinutes() ))
+  .then(() =>
+    console.log(
+      'DB conectada ' + new Date().getHours() + ':' + new Date().getMinutes()
+    )
+  )
   .catch((error) => console.log(error));
 
 //variables de desarrollo
@@ -57,8 +62,8 @@ app.use(
 );
 
 //inicializar passport
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
 
 //flash messages
 app.use(flash());
